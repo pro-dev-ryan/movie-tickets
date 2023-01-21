@@ -1,10 +1,9 @@
-import { useEffect, useReducer } from "react";
-const initialState = {
+export const initialState = {
   loading: false,
   error: false,
   cards: [],
 };
-const reducer = (state, action) => {
+export const reducer = (state, action) => {
   switch (action.type) {
     case "Loading":
       return {
@@ -30,25 +29,3 @@ const reducer = (state, action) => {
     }
   }
 };
-const FetchReducer = () => {
-  const [state, dispatch] = useReducer(reducer, initialState);
-  useEffect(() => {
-    const controller = new AbortController();
-    const signal = controller.signal;
-    dispatch({ type: "Loading" });
-    fetch("https://api.tvmaze.com/search/shows?q=all", { signal })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        dispatch({ type: "Success", payload: data });
-      })
-      .catch((err) => {
-        // dispatch({type:"Error"})
-        console.log(err);
-      });
-    return () => controller.abort();
-  }, []);
-  return;
-};
-
-export default FetchReducer;
