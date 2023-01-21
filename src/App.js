@@ -5,13 +5,9 @@ import Contents from "./Functions/content";
 
 function App() {
   return (
-    <div className="mx-5">
-      <Row>
-        <Col className="">
-          <Contents />
-        </Col>
-      </Row>
-    </div>
+    <Row className="mx-lg-4 mx-md-2 mx-1">
+      <Contents />
+    </Row>
   );
 }
 
