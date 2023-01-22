@@ -1,6 +1,5 @@
 import Cards from "../Components/Cards";
 import { useProduct } from "../Contexts/ContextProduct";
-import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 
 const Contents = () => {
