@@ -11,7 +11,6 @@ const Slider = ({ id }) => {
     state: { cards },
   } = useProduct();
   const filtered = cards.filter((card) => card?.show?.id !== parseInt(id));
-  console.log(filtered);
   return (
     <Swiper
       modules={[Autoplay]}
@@ -36,21 +35,15 @@ const Slider = ({ id }) => {
         },
       }}
     >
-      {filtered.map((i, el) => {
-        return (
-          <Col>
-            <SwiperSlide key={el}>
-              <div className="d-flex justify-content-center">
-                <img
-                  src={i?.show?.image?.medium}
-                  className="img-fluid"
-                  alt=""
-                />
-              </div>
-            </SwiperSlide>
-          </Col>
-        );
-      })}
+      {filtered.map((i, el) => (
+        <Col>
+          <SwiperSlide key={el}>
+            <div className="d-flex justify-content-center">
+              <img src={i?.show?.image?.medium} className="img-fluid" alt="" />
+            </div>
+          </SwiperSlide>
+        </Col>
+      ))}
     </Swiper>
   );
 };

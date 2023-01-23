@@ -19,10 +19,9 @@ const ContextProduct = ({ children }) => {
       .catch((err) => {
         if (err?.name !== "AbortError") {
           dispatch({ type: "Error" });
-        } else {
-          console.log("clean up Done");
         }
       });
+    // Cleanup fetch
     return () => controller.abort();
   }, []);
 

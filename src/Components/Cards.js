@@ -7,10 +7,10 @@ import { Link } from "react-router-dom";
 const Cards = ({ card: { show } }) => {
   const { name, image, rating, language, summary, id, network, status, type } =
     show;
-  console.log(show);
   const cleanText = summary.replace(/<\/?[^>]+(>|$)/g, " ");
   return (
     <>
+      {/* Cards for smaller screens */}
       <Card
         style={{ maxWidth: "380px", minHeight: "420px" }}
         className="my-lg-5 my-2 mx-0 shadow d-md-none border-0"
@@ -44,6 +44,7 @@ const Cards = ({ card: { show } }) => {
           </div>
         </Card.Body>
       </Card>
+      {/* Cards for larger screens */}
       <Card
         style={{ maxWidth: "380px", minHeight: "420px" }}
         className="my-lg-5 d-none d-md-block my-2 mx-0 shadow border-0"
@@ -92,4 +93,3 @@ const Cards = ({ card: { show } }) => {
 };
 
 export default Cards;
-// style={{ height: "280px", width: "340px" }}
