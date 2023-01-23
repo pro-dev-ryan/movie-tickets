@@ -13,7 +13,7 @@ const Cards = ({ card: { show } }) => {
       {/* Cards for smaller screens */}
       <Card
         style={{ maxWidth: "380px", minHeight: "420px" }}
-        className="my-lg-5 my-2 mx-0 shadow d-md-none border-0"
+        className="my-lg-5 my-2 mx-0 shadow-sm d-md-none border-0"
       >
         <Col>
           <Card.Img
@@ -47,7 +47,7 @@ const Cards = ({ card: { show } }) => {
       {/* Cards for larger screens */}
       <Card
         style={{ maxWidth: "380px", minHeight: "420px" }}
-        className="my-lg-5 d-none d-md-block my-2 mx-0 shadow border-0"
+        className="my-lg-5 d-none d-md-block my-2 mx-0 shadow-sm border-0"
       >
         <Row>
           <Col className="w-50">
